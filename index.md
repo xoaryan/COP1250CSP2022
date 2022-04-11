@@ -3,8 +3,8 @@
 PROJECT 1. MINI CACTUS GAME
 Objective. To complete a java implementation of FINAL FANTASY® XIV Gold Saucer mini cactpot game.
 The game of mini cactpots played on a 3x3 matrix with numbers from 1 to 9 appearing each of them only once. The matrix is filled randomly.  
-Game board description
- 
+
+ ![Game board description](/assets/images/MCPimg1Labels.png)
 Reset button: after the first game, allows to start a new game.
 Payout information: rewards based on the sum of the chosen line.
 Line selector: buttons with the arrows pointing one of the eight different lines in 
