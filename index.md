@@ -12,11 +12,11 @@ The array of numbers.
 Numbers: Three by Three array of numbers between 1 and 9 with no number-
 Game Process
 - Step1: Choose three uncovered spaces in the board
- ![Step1](MCPimg2.png)
+ ![Step1](MCPimg2.PNG)
 - Step 2: Choose one of the 8 arrows that allows to choose the line of numbers you want to get.
- ![Step2](MCPimg3.png)
+ ![Step2](MCPimg3.PNG)
 - Step 3: See the addition and know how much you are going to get
- ![Step3](MCPimg4.png)
+ ![Step3](MCPimg4.PNG)
 - Step 4: Click the reset button to play again or just use the close button to end the program.
 
 Project rules
