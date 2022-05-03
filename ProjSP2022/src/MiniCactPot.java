@@ -293,69 +293,114 @@ public class MiniCactPot extends JFrame {
 	 *  the demo. It does not need to be 100% with the
 	 *  same spacing and/or format as the demo. 
 	 */
+	/*
+	 *STARTING THE SECTION THAT THE STUDENT HAS TO CODE.
+	 *  READ CAREFULLY THE DESCRIPTION AND ASK QUESTIONS
+	 *  IF NECESSARY
+	 */
+
 	public String createRewardsTextArea() {
-		// Return the proper string for the rewards table
-		return "PUT THE REWARDS TABLE HERE";
+	  // Returns the proper string for the rewards table above
+	  return "*******PAYOUT*******\n"
+       	 	+ "Sum\tMGP\tSum\tMGP\n"
+        	+ "6\t10000\t16\t72\n"
+        	+ "7\t36\t17\t180\n"
+        	+ "8\t720\t18\t119\n"
+        	+ "9\t360\t19\t36\n"
+        	+ "10\t80\t20\t306\n"
+        	+ "11\t252\t21\t1080\n"
+        	+ "12\t108\t22\t144\n"
+        	+ "13\t72\t23\t1800\n"
+        	+ "14\t54\t24\t3600\n"
+        	+ "15\t180";
 				
 	}
-	/*
-	 *  Special class for matrix. Only modify the indicated methods
-	 */
+
 	private class NumberMatrix{
-		private int[][] matrix;
+  		private int[][] matrix;
 		private final int ROWNUMS=3,COLNUMS=3;
 		public NumberMatrix() {
 			matrix=new int[ROWNUMS][COLNUMS];
 		}
-		/*
-		 * Method 2. Make this method to populate the parameter matrix
-		 * with the number one to nine in an random number and without
-		 * repeating any number
-		 */
+		
+		//resets the matrix
 		public void resetMatrix(int[][] matrix) {
-			// This is a dummy answer, add the code necessary to fill the array
-			for(int i=0;i<3;i++)
-				for(int j=0;j<3;j++)
-					matrix[i][j]=1;
-			
+      		// Initialize a new matrix
+			int[][] newMatrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+      
+      			Random rg = new Random();
+			// Switches a number for a random other number
+			for (int i=0;i<newMatrix.length;i++)
+			  for(int j=0;j<newMatrix[i].length;j++) { 
+                             int randomRow;
+                             int randomColumn;
+                             int saved = newMatrix[i][j];
+                             randomRow = rg.nextInt(3);
+                             randomColumn = rg.nextInt(3);
+                             newMatrix[i][j]=newMatrix[randomRow][randomColumn];
+                             newMatrix[randomRow][randomColumn] = saved;
+                          }
+      
+                        // Copy new matrix to original
+                       for (int i=0;i<3;i++)
+                         for(int j=0;j<3;j++)
+                           matrix[i][j]=newMatrix[i][j];
+      
 		}
-		/*
-		 *  To obtain the matrix. Do not change
-		 */
+
 		public int[][] getMatrix(){
 			return matrix;
 		}
-		/*
-		 *  Method 3. For the matrix and an specific row to return
+		
+                /*
+		 *  For the matrix and an specific row to return
 		 *  the sum of the numbers in that row
 		 */
 		public int getRowSums(int[][] matrix,int row) {
 			// Add code and return the proper number
-			return 0;
+                        int sum=0;
+                        for(int i=0; i<3; i++)
+                          sum +=matrix[row][i];
+			
+                        return sum;
 		}
-		/*
-		 *  Method 4. For the matrix and an specific column(col) to return
+		
+                /*
+		 *  For the matrix and an specific column to return
 		 *  the sum of the numbers in that column
 		 */
 		public int getColSums(int[][] matrix,int col) {
 			// Add code and return the proper number
-						return 0;
+			int sum=0;
+                        for(int i=0; i<3; i++)
+                          sum +=matrix[i][col];
+			
+                        return sum;
 		}
-		/*
-		 *  Method 5. For the matrix return the sum of the direct
+		
+                /*
+		 *  For the matrix return the sum of the direct
 		 *  diagonal
 		 */
 		public int getDirDiagSum(int[][] matrix) {
-			// Add code and return the proper number
-						return 0;
+			// Add code and returns the proper number
+			int sum = 0;
+                        for(int i=0; i<3; i++)
+                          sum+=matrix[i][i];  
+      
+                        return sum;
 		}
-		/*
-		 *  Method 6. For the matrix return the sum of the inverse
+		
+                /*
+		 *  For the matrix return the sum of the inverse
 		 *  diagonal
 		 */
 		public int getInvDiagSum(int[][] matrix) {
-			// Add code and return the proper number
-						return 0;
+			int sum = 0;
+                        for(int i=0; i<3; i++)
+                          sum+=matrix[i][2-i];			
+      
+                        return sum;
 		}
 		
 	}
